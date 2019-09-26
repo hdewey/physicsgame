@@ -96,6 +96,9 @@ var loop = function() {
     ctx.closePath();
 
     ctx.restore();
+    //console.log(ball.velocity.x)
+    $("#x").html("velocity (x): " + Math.round(ball.velocity.x * 100) / 100 )
+    $("#y").html("velocity (y): " + Math.round(ball.velocity.y * 100) / 100 )
 
     // Draw the slingshot
     if (mouse.isDown) {
