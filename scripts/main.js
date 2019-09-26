@@ -5,26 +5,13 @@ var frameRate = 1/40; // Seconds
 var frameDelay = frameRate * 1000; // ms
 var loopTimer = false;
 
-/*
- * Experiment with values of mass, radius, restitution,
- * gravity (ag), and density (rho)!
- *
- * Changing the constants literally changes the environment
- * the ball is in.
- *
- * Some settings to try:
- * the moon: ag = 1.6
- * water: rho = 1000, mass 5
- * beach ball: mass 0.05, radius 30
- * lead ball: mass 10, restitution -0.05
- */
 var ball = {
     position: {x: width/2, y: 0},
     velocity: {x: 10, y: 0},
     mass: 0.1, //kg
     radius: 15, // 1px = 1cm
     restitution: -0.7
-    };
+};
 
 var Cd = 0.47;  // Dimensionless
 var rho = 1.22; // kg / m^3
@@ -99,10 +86,7 @@ var loop = function() {
         ball.position.x = ball.radius;
     }
     // Draw the ball
-
-
-    ctx.clearRect(0,0,width,height);
-
+    ctx.clearRect(0,0,width,height); // disable to leave lines
     ctx.save();
 
     ctx.translate(ball.position.x, ball.position.y);
@@ -112,8 +96,6 @@ var loop = function() {
     ctx.closePath();
 
     ctx.restore();
-
-
 
     // Draw the slingshot
     if (mouse.isDown) {
