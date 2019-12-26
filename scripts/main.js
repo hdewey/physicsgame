@@ -8,9 +8,9 @@ var loopTimer = false;
 var ball = {
     position: {x: width/2, y: 0},
     velocity: {x: 10, y: 0},
-    mass: 0.1, //kg
+    mass: .1, //kg
     radius: 15, // 1px = 1cm
-    restitution: -0.7
+    restitution: -0.5
 };
 
 var Cd = 0.47;  // Dimensionless
@@ -86,7 +86,7 @@ var loop = function() {
         ball.position.x = ball.radius;
     }
     // Draw the ball
-    ctx.clearRect(0,0,width,height); // disable to leave lines
+    ctx.clearRect(0, 0, width, height); // disable to leave lines
     ctx.save();
 
     ctx.translate(ball.position.x, ball.position.y);
